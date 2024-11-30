@@ -1,4 +1,7 @@
 # MAE-DFJSP
+
+This project is the source code of an improved two-individual-based evolutionary algorithm for the flexible job shop scheduling problem with machine-worker dual constraints, please read following instruction carefully. The parameter, input and output all are included in it.
+
 ## Adjustment of MAE Parameters
 
 The parameters in the MAE algorithm are defined in `const.h` in the source file directory, and the following table explains the meaning of each constant. After completing the changes, you can recompile to complete the update.
@@ -13,10 +16,10 @@ The parameters in the MAE algorithm are defined in `const.h` in the source file 
 | `t_retain`        | Maximum Size of Solution Retention Mechanism                           |
 | `t_gen`           | Maximum Iteration Number in Tabu Search                                |
 | `t_neighbor_num`  | Number of Neighbors Generated in One Iteration in Tabu Search          |
-| `t_swap`          | Number of Perturbations in Neighbor of 5.2.1                           |
-| `t_insert`        | Number of Perturbations in Neighbor of 5.2.2                           |
-| `t_machine`       | Number of Perturbations in Neighbor of 5.2.3                           |
-| `t_worker`        | Number of Perturbations in Neighbor of 5.2.4                           |
+| `t_swap`          | Number of Perturbations in Neighbor of Operation-based Swaped Neighbourhood Structure                           |
+| `t_insert`        | Number of Perturbations in Neighbor of Operation-based Insertion Neighbourhood Structure                           |
+| `t_machine`       | Number of Perturbations in Neighbor of Machine-based Neighbourhood Structure                           |
+| `t_worker`        | Number of Perturbations in Neighbor of Worker-based Neighbourhood Structure                          |
 
 *Table Appendix-1: Meaning of Constants in `const.h`*
 
