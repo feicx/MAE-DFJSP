@@ -46,12 +46,12 @@ The format of each job $j_i$ is as follows:
 The format of each operation $o_i$ is as follows:  
 
 1. The first line is entered as an integer indicating the amount of time this operation will take.  
-2. Next, enter a number representing the number of candidate machines for this operation, followed by each candidate machine on each line in the format $m_i$ and `factor`, which is the number of the machine and the influence factor, respectively.  
-3. Next, enter a number representing the number of candidate worker machines for this operation, followed by individual candidate workers on each line in the candidate machine format $w_i$ and `factor`, the number of the worker and the influencing factor, respectively.  
+2. Next, enter a number representing the number of candidate machines for this operation, followed by each candidate machine on each line in the format $m_i$ and $factor$, which is the number of the machine and the influence factor, respectively.  
+3. Next, enter a number representing the number of candidate worker machines for this operation, followed by individual candidate workers on each line in the candidate machine format $w_i$ and $factor$, the number of the worker and the influencing factor, respectively.  
 
 ### Input Notes
 
-- Each input is an integer except for `factor`, which accepts double-precision floating-point numbers.  
+- Each input is an integer except for $factor$, which accepts double-precision floating-point numbers.  
 - Each input is separated by a space or a newline.  
 
 ### Output
