@@ -31,23 +31,23 @@ The MAE Framework inputs the data from the file `input.txt`.
 
 It needs to be entered in the following format:  
 
-1. On the first line, enter three numbers for the number of jobs `n`, the number of machines `m`, and the number of workers `l`. The machines and workers are numbered `1~m` and `1~l`.  
+1. On the first line, enter three numbers for the number of jobs $n$, the number of machines $m$, and the number of workers $l$. The machines and workers are numbered $1 \sim m$ and $1 \sim l$.  
 2. Next, enter the information for each job in turn.  
 
 ### Job Format
 
-The format of each job \(j_i\) is as follows:  
+The format of each job $j_i$ is as follows:  
 
-- The first line of the job is the total number of operations for this job, \(n_\text{job}\).  
-- Next, enter the information for each operation \(o\) in turn.  
+- The first line of the job is the total number of operations for this job, $n_\text{job}$.  
+- Next, enter the information for each operation $o$ in turn.  
 
 ### Operation Format
 
-The format of each operation \(o_i\) is as follows:  
+The format of each operation $o_i$ is as follows:  
 
 1. The first line is entered as an integer indicating the amount of time this operation will take.  
-2. Next, enter a number representing the number of candidate machines for this operation, followed by each candidate machine on each line in the format \(m_i\) and `factor`, which is the number of the machine and the influence factor, respectively.  
-3. Next, enter a number representing the number of candidate worker machines for this operation, followed by individual candidate workers on each line in the candidate machine format \(w_i\) and `factor`, the number of the worker and the influencing factor, respectively.  
+2. Next, enter a number representing the number of candidate machines for this operation, followed by each candidate machine on each line in the format $m_i$ and `factor`, which is the number of the machine and the influence factor, respectively.  
+3. Next, enter a number representing the number of candidate worker machines for this operation, followed by individual candidate workers on each line in the candidate machine format $w_i$ and `factor`, the number of the worker and the influencing factor, respectively.  
 
 ### Input Notes
 
@@ -61,4 +61,4 @@ Two files, `solution.csv` and `log.txt`, are output when the program is complete
 - `solution.csv`: Contains the optimal solution produced at the end of the algorithm.  
 - `log.txt`: Records the algorithm's runtime.  
 
-It is worth noting that the output job serial numbers are numbered according to the order in which you entered the jobs, from \(1\) to \(n\) completion.
+It is worth noting that the output job serial numbers are numbered according to the order in which you entered the jobs, from $1$ to $n$ completion.
