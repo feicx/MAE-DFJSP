@@ -21,10 +21,6 @@ The parameters in the MAE algorithm are defined in `const.h` in the source file 
 | `t_machine`       | Number of Perturbations in Neighbor of Machine-based Neighbourhood Structure                           |
 | `t_worker`        | Number of Perturbations in Neighbor of Worker-based Neighbourhood Structure                          |
 
-*Table Appendix-1: Meaning of Constants in `const.h`*
-
----
-
 ## Guidelines for Using MAE
 
 The MAE Framework inputs the data from the file `input.txt`.  
