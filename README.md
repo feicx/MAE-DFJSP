@@ -21,14 +21,20 @@ The parameters in the MAE algorithm are defined in `const.h` in the source file 
 | `t_machine`       | Number of Perturbations in Neighbor of Machine-based Neighbourhood Structure                           |
 | `t_worker`        | Number of Perturbations in Neighbor of Worker-based Neighbourhood Structure                          |
 
+## Program Running Interface
+
+![Program Interface](/assert/running_interface.png)
+
 ## Guidelines for Using MAE
 
-The MAE Framework inputs the data from the file `input.txt`.  
+The MAE Framework inputs the data from the file `input.txt`.
+
+![Input Format](/assert/input_format.png)
 
 It needs to be entered in the following format:  
 
 1. On the first line, enter three numbers for the number of jobs $n$, the number of machines $m$, and the number of workers $l$. The machines and workers are numbered $1 \sim m$ and $1 \sim l$.  
-2. Next, enter the information for each job in turn.  
+2. Next, enter the information for each job in turn.
 
 ### Job Format
 
@@ -58,3 +64,6 @@ Two files, `solution.csv` and `log.txt`, are output when the program is complete
 - `log.txt`: Records the algorithm's runtime.  
 
 It is worth noting that the output job serial numbers are numbered according to the order in which you entered the jobs, from $1$ to $n$ completion.
+
+![Program Interface](/assert/running_output.png)
+
