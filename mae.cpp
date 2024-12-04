@@ -32,9 +32,21 @@ bool similar(solution &S1, solution &S2){
     schedule Sc_2 = solution_decode(S2);
     clear_schedule(Sc_1);
     clear_schedule(Sc_2);
-    if(pr_distance(Sc_1, Sc_2) < decode_max_ans / 20 + 5)
-        return true;
-    return false;
+    int size = Sc_1.schedule.size(), cnt = 0;
+    for(std::map<std::pair<int, int>, struct schedule_node>::const_iterator it = Sc_1.schedule.begin(); it!=Sc_1.schedule.end(); it++){
+        int Location_S1 = (it->second.begin_time + it->second.end_time) / 2;
+        struct schedule_node o_S2 = Sc_2.schedule.find(std::make_pair(it->second.job_id, it->second.jon_order))->second;
+        int Location_S2 = (o_S2.begin_time + o_S2.end_time) / 2;
+        if(Location_S1 != Location_S2)
+            continue;
+        if(it->second.machine_id == o_S2.machine_id)
+            cnt++;
+        if(it->second.worker_id == o_S2.worker_id)
+            cnt++;
+        if(cnt > size * 4 / 5)
+            return false;
+    }
+    return true;
 }
 
 
