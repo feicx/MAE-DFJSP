@@ -4,8 +4,6 @@
 
 #include <utility>
 #include <map>
-#include <cmath>
-#include <cstdio>
 
 #include "fjsp.h"
 #include "pr_distance.h"
@@ -28,7 +26,7 @@ int pr_distance(const schedule &S1, const schedule &S2){
             	LS1 = S1.machine_L[it->second.machine_id];
             if(o_S2.machine_id < num_machines && o_S2.machine_id >= 0)
 				LS2 = S2.machine_L[o_S2.machine_id];
-            distance = distance + std::min(Location_S1 + Location_S2, LS1 + LS2 - Location_S1 - Location_S2);
+            distance = distance + std::min(abs(Location_S1 + Location_S2), abs(LS1 + LS2 - Location_S1 - Location_S2));
         }
         if(it->second.worker_id == o_S2.worker_id)
             distance = distance + abs(Location_S1 - Location_S2);
@@ -40,14 +38,14 @@ int pr_distance(const schedule &S1, const schedule &S2){
             if(o_S2.machine_id < num_workers)
             	LS2 = S2.worker_L[o_S2.worker_id];
             //printf("  W: %d %d\n",LS1, LS2);
-            distance = distance + std::min(Location_S1 + Location_S2, LS1 + LS2 - Location_S1 - Location_S2);
+            distance = distance + std::min(abs(Location_S1 + Location_S2), abs(LS1 + LS2 - Location_S1 - Location_S2));
         }
     }
     return distance;
 }
 
 int pr_distance(const schedule &S1, const schedule &S2, std::pair<int, int> operation){
-    //printf("%d %d\n", operation.first, operation.second);
+    // printf("%d %d\n", operation.first, operation.second);
     int distance = 0;
     struct schedule_node o_S1 = S1.schedule.find(operation)->second;
     int Location_S1 = (o_S1.begin_time + o_S1.end_time) / 2;
@@ -62,7 +60,7 @@ int pr_distance(const schedule &S1, const schedule &S2, std::pair<int, int> oper
         	LS1 = S1.machine_L[o_S1.machine_id];
         if(o_S2.machine_id < num_machines && o_S2.machine_id >= 0)
         	LS2 = S2.machine_L[o_S2.machine_id];
-        distance = distance + std::min(Location_S1 + Location_S2, LS1 + LS2 - Location_S1 - Location_S2);
+        distance = distance + std::min(Location_S1 + Location_S2, abs(LS1 + LS2 - Location_S1 - Location_S2));
     }
     if(o_S1.worker_id == o_S2.worker_id)
         distance = distance + abs(Location_S1 - Location_S2);
@@ -74,7 +72,7 @@ int pr_distance(const schedule &S1, const schedule &S2, std::pair<int, int> oper
         if(o_S2.worker_id < num_workers && o_S2.worker_id >= 0)
         	LS2 = S2.worker_L[o_S2.worker_id];
         //printf("  W: %d %d\n",LS1, LS2);
-        distance = distance + std::min(Location_S1 + Location_S2, LS1 + LS2 - Location_S1 - Location_S2);
+        distance = distance + std::min(Location_S1 + Location_S2, abs(LS1 + LS2 - Location_S1 - Location_S2));
     }
     return distance;
 }
